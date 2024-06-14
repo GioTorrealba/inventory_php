@@ -1,7 +1,7 @@
 <?php
+require 'views/index.view.php';
+$connection = new mysqli('localhost', 'root', '', 'inventario');
 
-$conexion = new mysqli('localhost', 'root', '', 'inventory');
-
-echo $conexion->connect_errno;
+echo $connection->connect_errno;
 
 ?>
