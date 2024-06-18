@@ -1,7 +1,11 @@
-<?php
-require 'views/index.view.php';
-$connection = new mysqli('localhost', 'root', '', 'inventario');
+<?php session_start();
+require 'config.php';
+require 'functions.php';
 
-echo $connection->connect_errno;
+
+$conexion = conection($bd_config);
+$products = obtener_art($blog_config['prod_por_pag'], $conexion);
+
+require 'views/index.view.php';
 
 ?>

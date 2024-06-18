@@ -7,6 +7,61 @@
 
 }
 
+body {
+	font-size: 16px;
+	font-family: "DM Serif Display", serif;
+	background: #1B1D35;
+	color:#fff;
+}
+div h2 {
+    margin: 20px 0;
+    text-align: center;
+    color: #4183da;
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+header .navbar {
+    font-family: "DM Serif Display", serif;
+	background: #7bbedd;
+
+}
+.formulario .form-group {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+
+
+.formulario .izquierda {
+	padding: 15px;
+	text-align: center;
+	width: 48px;
+	max-height: 48px;
+	font-size: 18px;
+	line-height: 18px;
+	background: #c8c8c8;
+	display: inline-block;
+	color:#6b6b6b;
+	vertical-align:top;
+}
+
+.contenedor{
+	max-width: 500px;
+	width: 90%;
+	margin: auto;
+}
+.contenedor .titulo {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    background-color: black;
+
+}
+
+
+/* 
 header {
 	color:#fff;
 	margin-bottom: 30px;
@@ -51,17 +106,10 @@ body{
 
 }
 
-h1 {
-    margin: 20px 0;
-    text-align: center;
-    color: #bd1717;
-    font-family: "DM Serif Display", serif;
-    font-weight: 400;
-    font-style: normal;
-}
+
 .contenedor.productos {
     margin-bottom: 20px;
 }
 .contenedor .articulos ul {
     list-style: none;
-}
+} */
