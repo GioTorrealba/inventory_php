@@ -33,5 +33,4 @@ function auth() {
   }
   return null;
 }
-
 ?>

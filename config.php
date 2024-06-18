@@ -10,5 +10,4 @@ $bd_config = array(
 $blog_config = array(
     'prod_por_pag' => '5'
 );
-
 ?>
