@@ -8,9 +8,7 @@
 					<div class="card-title">
 						Listado de productos
 						<?php if(auth()): ?>
-						<button class="btn btn-sm btn-success">
-							Crear
-						</button>
+						<a class="btn btn-sm btn-success" href="nuevo.php">Crear Nuevo Producto</a>
 						<?php endif; ?>
 					</div>
 					<div>
@@ -22,7 +20,6 @@
 										<th scope="col">Producto</th>
 										<th scope="col">Precio</th>
 										<th scope="col">Cantidad</th>
-										<th scope="col">Fecha</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -32,11 +29,10 @@
 											<td><?php echo $product['name']; ?></td>
 											<td><?php echo $product['price']; ?></td>
 											<td><?php echo $product['quantity']; ?></td>
-											<td><?php echo $product['deleted_at']; ?></td>
-											<td>
+											<td class="nada">
 												<?php if(auth()): ?>
-													<a href="actualizar.php?id=<?php echo $product['id']; ?>"><button class="btn btn-sm btn-info">Actualizar</button></a>
-													<a href="borrar.php"><button class="btn btn-sm btn-danger" href="#">Borrar</button></a>
+													<a href="actualizar.php?id=<?php echo $product['id']; ?>"><button class="derech">Actualizar</button></a>
+													<a href="borrar.php?id=<?= $product['id']; ?>"><button class="izq href="#">Borrar</button></a>
 												<?php endif; ?>
 											</td>
 										</tr>
@@ -50,11 +46,21 @@
 						<div class="row">
 							<div class="col-md-12 d-flex justify-content-center">
 								<nav aria-label="Navigation">
+									<?php $numero_paginas = numero_pag($blog_config['prod_por_pag'], $conexion); ?>
 									<ul class="pagination">
-										<li class="page-item"><a class="page-link" href="#">Anterior</a></li>
-										<li class="page-item"><a class="page-link" href="#">1</a></li>
-										<li class="page-item"><a class="page-link" href="#">2</a></li>
-										<li class="page-item"><a class="page-link" href="#">Siguiente</a></li>
+										<?php if (pagina_actual() === 1): ?>
+											
+										<?php else: ?>
+											<li class="page-item"><a class="page-link" href="index.php?p=<?php echo pagina_actual() - 1; ?>">Anterior</a></li>
+										<?php endif; ?>
+										<?php for($i = 1; $i <= $numero_paginas; $i++): ?>
+											<li class="page-item"><a class="page-link" href="index.php?p=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+										<?php endfor; ?>		
+										<?php if (pagina_actual() === $numero_paginas): ?>
+											<?php echo $numero_paginas; ?>
+										<?php else: ?>
+											<li class="page-item"><a class="page-link" href="index.php?p=<?php echo pagina_actual() + 1; ?>">Siguiente</a></li>
+										<?php endif; ?>
 									</ul>
 								</nav>
 							</div>
