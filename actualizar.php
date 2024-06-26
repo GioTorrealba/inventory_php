@@ -27,8 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     header('Location: ' . RUTA);
 
-
-
 } else {
     $id_producto = id_prod($_GET['id']);
     if (empty($id_producto)){

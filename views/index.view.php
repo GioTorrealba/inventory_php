@@ -20,6 +20,7 @@
 										<th scope="col">Producto</th>
 										<th scope="col">Precio</th>
 										<th scope="col">Cantidad</th>
+										<th></th>
 									</tr>
 								</thead>
 								<tbody>
@@ -56,10 +57,8 @@
 										<?php for($i = 1; $i <= $numero_paginas; $i++): ?>
 											<li class="page-item"><a class="page-link" href="index.php?p=<?php echo $i; ?>"><?php echo $i; ?></a></li>
 										<?php endfor; ?>		
-										<?php if (pagina_actual() === $numero_paginas): ?>
-											<?php echo $numero_paginas; ?>
-										<?php else: ?>
-											<li class="page-item"><a class="page-link" href="index.php?p=<?php echo pagina_actual() + 1; ?>">Siguiente</a></li>
+										<?php if (pagina_actual() != $numero_paginas): ?>
+											<li class="page-item"><a class="page-link" href="index.php?p=<?php echo pagina_actual() + 1; ?>">Siguiente</a></li>	
 										<?php endif; ?>
 									</ul>
 								</nav>
